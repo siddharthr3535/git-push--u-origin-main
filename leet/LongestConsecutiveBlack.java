@@ -1,18 +1,16 @@
-class Solution {
-  public int minimumRecolors(String blocks, int k) {
-    int result = Integer.MAX_VALUE;
-
-    for(int i = 0 ; i <= blocks.length() - k ; i ++){
-      int count = 0;
-      // System.out.println(i);
-      for(int j = i  ; j < i + k ; j++){
-
-        if(blocks.charAt(j) == 'W'){
-          count += 1;
-        }
-      }
-      result= Math.min(result , count);
-    }
-    return result;
-  }
-}
+class Solution:
+def minimumRecolors(self, blocks: str, k: int) -> int:
+  result = len(blocks) + 1
+  l = 0
+  r = 0
+  count = 0
+  while r< len(blocks):
+    if blocks[r] == 'W':
+      count += 1
+    if r - l + 1 == k:
+      result = min(result , count)
+      if blocks[l] == 'W':
+      count -= 1
+      l += 1
+    r += 1
+  return result
