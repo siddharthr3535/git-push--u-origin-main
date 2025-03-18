@@ -1,7 +1,6 @@
 class Solution:
     def maximumCandies(self, candies: List[int], k: int) -> int:
         total = sum(candies)
-
         if total < k:
             return 0
         left , right= 1, total//k
