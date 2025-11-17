@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class Pair {
   int first;
   int second;
@@ -21,7 +23,7 @@ public class LongestConsecutiveSequence {
   // Adds the number and returns the length of the longest consecutive sequence so far
   public int addNumberAndCompute(int num) {
     if(stack.size() == 0){
-      stack.append(new Pair(num , 1));
+      stack.add(new Pair(num , 1));
       return 1;
     }
     while(!stack.isEmpty() && stack.pop().first >= num - 1){
