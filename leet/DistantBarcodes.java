@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 class Solution {
   public int[] rearrangeBarcodes(int[] barcodes) {
     Map<Integer, Integer> map = new HashMap<>();
