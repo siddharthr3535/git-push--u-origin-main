@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 class Solution {
   public int minMeetingRooms(int[][] intervals) {
     PriorityQueue<Integer> minHeap = new PriorityQueue<>();
