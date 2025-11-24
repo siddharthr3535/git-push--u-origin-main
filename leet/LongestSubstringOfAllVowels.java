@@ -4,7 +4,6 @@ class Solution:
         result = 0
         i = 0
         j = 0
-
         v = "aeiou"
         d = {}
         for i in range(1, len(v)):
@@ -25,19 +24,13 @@ class Solution:
                             break
                     prev = current
                     j += 1
-                
-                # print(i , j , prev )
                 if prev == 'u':
-                    # print("anguttu")
                     result = max(result, j - i)
                 i = j
             else:
                 j += 1
                 i = j
-        
-        # print(i , j , prev)
         if prev == 'u':
-            # print("inguttu")
             result = max(result, j - i)
 
         return result
