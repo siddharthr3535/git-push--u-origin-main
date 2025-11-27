@@ -1,16 +1,23 @@
-class Solution:
-  def minimumRecolors(self, blocks: str, k: int) -> int:
-    result = len(blocks) + 1
-    l = 0
-    r = 0
-    count = 0
-    while r< len(blocks):
-      if blocks[r] == 'W':
-        count += 1
-      if r - l + 1 == k:
-        result = min(result , count)
-        if blocks[l] == 'W':
-        count -= 1
-        l += 1
-      r += 1
-    return result
+class Solution {
+    public int minimumRecolors(String blocks, int k) {
+        int result = blocks.length() + 1;
+        int l = 0;
+        int r = 0;
+        int count = 0;
+
+        while (r < blocks.length()) {
+            if (blocks.charAt(r) == 'W') {
+                count++;
+            }
+            if (r - l + 1 == k) {
+                result = Math.min(result, count);
+                if (blocks.charAt(l) == 'W') {
+                    count--;
+                }
+                l++;
+            }
+            r++;
+        }
+        return result;
+    }
+}
